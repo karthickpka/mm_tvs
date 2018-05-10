@@ -1,0 +1,126 @@
+<html>
+<link rel="stylesheet" type="text/css" href="../CSS/myStyleBill.css"></link>
+<script src="../Js/billingFns.js"></script>
+
+<h2 style="text-align: center;">Vehicle Invoice</h2>
+<body onLoad="getProdDetails();setDate();" style="margin-left:50;margin-right:50;">
+<p>Invoice Number:&nbsp;<label id="Invoicenumber"></label></p>
+<p>Invoice Date: <input id="date" type="date" readonly/></p>
+<table >
+<tbody>
+<tr>
+<td>
+<p>Shop Address<br />Address1<br />Address2<br />Address3<br />Mob:</p>
+</td>
+<td>
+<p style="text-align: right;">Customer Address<br />
+<input  style="width:40%;" type="text" id="Customername" placeholder="CustomerName"/><br />
+<input  style="width:70%;" type="text" id="Address" placeholder="Address"/><br />
+<input  type="text" id="Contact" placeholder="Contact"/><br />
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<table >
+<tbody>
+<tr>
+<td>GST:&nbsp;<input  type="text" id="GST" placeholder="GSTNumber" style="text-align: left;" /></td>
+<td>Bill Type:&nbsp;<input  type="text" id="Type" placeholder="Bill Type" style="text-align: left;" /></td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr>
+<td>Particulars</td>
+<!--<td>HSN Code</td>
+<td>Qty</td-->
+<td>UnitCost</td>
+<td>Discount</td>
+<!--td>Taxable</td-->
+<td>Paid</td>
+<td>Credit</td>
+</tr>
+<tr>
+<td><input  type="text" id="Model" placeholder="Model" style="text-align: left;"/></td>
+<!--td>&nbsp;???</td>
+<td><input  type="text" id="Quantity" value="1"  style="text-align: left;" readonly/></td-->
+<td><input  type="text" id="Mrp" placeholder="MRP" style="text-align: left;" readonly/></td>
+<td><input  type="text" id="Discount" placeholder="Discount" value="0" style="text-align: left;" 
+        onchange="javascript:recalculate();"/></td>
+<!--td><input  type="text" id="Taxable" placeholder="Taxable Amt" style="text-align: left;" readonly/></td-->
+<td><input  type="text" id="Paid" placeholder="Paid" style="text-align: left;" onchange="javascript:recalculate();"/></td>
+<td><input  type="text" id="Credit" placeholder="Credit" style="text-align: left;" readonly/></td>
+</tr>
+</tbody>
+</table>
+<table style="float: right;">
+<tbody>
+<tr>
+<td>Total</td>
+<td><input  type="text" id="Total" placeholder="Total" readonly></td>
+</tr>
+<tr>
+<td>Round Off</td>
+<td><input  type="text" id="Roundoff" placeholder="RoundOff" readonly></td>
+</tr>
+<tr>
+<td>Net Total</td>
+<td><input  type="text" id="Nettotal" placeholder="NetTotal" readonly></td>
+</tr>
+</tbody>
+</table>
+<p>(Total In Words:  <b><label id="Netinwords" placeholder="Netinwords">
+</b></label>)</p>   
+<table>
+<tbody>
+<tr>
+<td>Part Description</td>
+<td>Frame No</td>
+<td>Engine No</td>
+<td>Booklet No</td>
+</tr>
+<tr>
+<td><input  type="text" id="Model1" placeholder="Model" style="text-align: left;" readonly></td>
+<td><input  type="text" id="Chasis" placeholder="Chasis" style="text-align: left;" readonly></td>
+<td><input  type="text" id="Engine" placeholder="Engine" style="text-align: left;" readonly></td>
+<td><input  type="text" id="Booklet" placeholder="Booklet No" style="text-align: left;" ></td>
+</tr>
+</tbody>
+</table>
+<p>Booking No:&nbsp;<input  type="text" id="Booking" placeholder="Booking No" style="text-align: left;" ></p>
+<p>Received:</p>
+<p><label><input style="width: 10%;" type="checkbox" />Tools</label><br /> <label><input style="width: 10%;" type="checkbox" />Manual Book</label><br /> <label><input style="width: 10%;" type="checkbox" />Duplicate Keys</label></p>
+<table>
+<tbody>
+<tr>
+<td>
+<p>Certified that tax paid by supplier.</p>
+<p>Goods once sold cannot be taken back or exchanged.<br />I/We Authorize that we have read all terms and conditions of TVS Motors.</p>
+</td>
+<td>Authorized Signature</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: justify;">&nbsp;</p>
+
+<script>
+document.write("<button id='back'" +
+        "onClick= \"window.history.back()\"" +
+        "class='printbutton' " +
+        ">Back To Home</button>");
+
+document.write("<button style=\"margin-left:5em\" id='sellPrint'" +
+    "onClick='sellFunction()' " +
+    "class='printbutton' " +
+    ">Sell And Print Bill</button>");
+
+document.write("<button style=\"margin-left:5em\" id='update'" +
+                    "onClick='updateCredit()' " +
+                    "class='printbutton' " +
+                    " >UpdateCredit</button>");
+</script>
+</br></br>
+</body>
+</html>

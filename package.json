@@ -1,0 +1,23 @@
+{
+  "name": "mm_tvs",
+  "version": "1.0.0",
+  "description": "for TVS",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karthickpka/mm_tvs.git"
+  },
+  "author": "pKa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karthickpka/mm_tvs/issues"
+  },
+  "homepage": "https://github.com/karthickpka/mm_tvs#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongodb": "^2.2.33"
+  }
+}

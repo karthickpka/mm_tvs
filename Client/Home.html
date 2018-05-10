@@ -1,0 +1,115 @@
+<html>  
+<link rel="stylesheet" type="text/css" href="../CSS/myStyle.css"></link>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
+
+<script src="../Js/homeFns.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<Body  style="margin-left:100;background-color: #E0E0E0;" onload="resetInputFields();setDate();">
+<!onLoad="buildHtmlTable('#excelDataTable')">
+<h1 align="left" style="padding-left:0.5em">MM Agencies - TVS - Home Page </h1>
+<br><button id="Billing" onclick="goToBilling()"><b>GoToBilling</b></button>
+    <!--input id="Password" type="password" placeholder="enter Password"/>
+    <button id="PasswordBtn" onclick="pwd()"><b>Login</b></button>
+    <br-->
+<p><b> Enter Details and Proceed</b></p>
+<p></p>
+    <!--label><input style="width:2%;" type="checkbox" id="IsSpares" name="IsSpares" value="No" onclick="ChangeIMEI_Box_To_Count()">Check this for Covers and Pouches</label>
+    <p></p-->
+
+
+<form name="Details" method="get" target="hiddenFrame">
+          <input id="chasis" name="chasis"  type="text" placeholder="enter Chasis No" required/>
+          <input id="engine" name="engine"  type="text" placeholder="enter Engine No" />
+          <!input id="model"  name="model" type="text" placeholder="enter Model No" />
+          <select id="model" name="model" required>
+              <option value="" selected>--Select--</option>
+              <option value="XL100 COMFORT" >XL100 COMFORT</option>
+              <option value="XL 100" >XL 100</option>
+              <option value="XL 100 HD" >XL 100 HD</option>
+              <option value="SCOOTY PEP + FASHION" >SCOOTY PEP + FASHION</option>
+              <option value="SCOOTY PEP + COLORME" >SCOOTY PEP + COLORME</option>
+              <option value="SCOOTY ZEST">SCOOTY ZEST</option>
+              <option value="SCOOTY ZEST MATTE SERIES" >SCOOTY ZEST MATTE SERIES</option>
+              <option value="WEGO BASIC REF" >WEGO BASIC REF</option>
+              <option value="JUPITER" >JUPITER</option>
+              <option value="JUPITER LE" >JUPITER LE</option>
+              <option value="JUPITER CLASSIC" >JUPITER CLASSIC</option>
+              <option value="NTORQ" >NTORQ </option>
+              <option value="SPORT KS SPOKE" >SPORT KS SPOKE</option>
+              <option value="SPORT ES" >SPORT ES</option>
+              <option value="SPORT KS  MAG WHL" >SPORT KS  MAG WHL</option>
+              <option value="STAR CITY + ES MAG TL GLD" >STAR CITY + ES MAG TL GLD</option>
+              <option value="STARCITY+ DUEL TONE" >STARCITY+ DUEL TONE</option>
+              <option value="NEW VICTOR 110 DISC" >NEW VICTOR 110 DISC</option>
+              <option value="NEW VICTOR 110 DISC REF" >NEW VICTOR 110 DISC REF</option>
+              <option value="NEW VICTOR 110 DRUM" >NEW VICTOR 110 DRUM</option>
+              <option value="APACHE RTR 160  refresh OLD" >APACHE RTR 160  refresh OLD</option>
+              <option value="APACHE RTR 160  refresh - REAR DIS OLD" >APACHE RTR 160  refresh - REAR DIS OLD</option>
+              <option value="APACHE RTR 180  OLD" >APACHE RTR 180  OLD</option>
+              <option value="APACHE RTR 160 I  NEW" >APACHE RTR 160 I  NEW</option>
+              <option value="APACHE RTR 160 NEW  M RED NEW" >APACHE RTR 160 NEW  M RED NEW</option>
+              <option value="APACHE RTR 160 R/DISC NEW" >APACHE RTR 160 R/DISC NEW</option>
+              <option value="APACHE RTR 160 RD  M RED NEW" >APACHE RTR 160 RD  M RED NEW</option>
+              <option value="APACHE RTR 180 NEW" >APACHE RTR 180 NEW</option>
+              <option value="APACHE RTR 180 MAT RED NEW" >APACHE RTR 180 MAT RED NEW</option>
+              <option value="APACHE 200" >APACHE 200</option>
+              <option value="APACHE 200 PIRELLI" >APACHE 200 PIRELLI</option>
+              <option value="APACHE  200 EFI" >APACHE  200 EFI</option>
+              <option value="Other" >Other</option>
+              </select>
+          <div>
+          <input id="date" name="date" type="date" placeholder="enter Date" />
+          <input id="mrp" name="mrp" type="number" placeholder="enter Price" />
+          <input id="color" name="color" type="text" placeholder="enter Color" />
+          </div>
+          <div>
+          <input id="comment" name="comment" type="text" placeholder="enter Comment" />
+          <input id="availability" name="availability" type="text" placeholder="Count" value="1" readonly/>
+          <input id="editprice" type="button" value="Edit Model Price" onclick="editModelPrice()"/>
+        </div>  
+        <br>
+         
+        <!button onclick="viewAll()"ViewAll</button>
+        <button type="submit" formaction="insertRecord" id="Add" >Add Purchase</button>
+        <button type="submit" formaction="updateRecord" id="Edit">Edit Record</button>
+        <button type="submit" formaction="deleteRecord" id="Delete">Delete Record</button>
+        <br><br>
+</form>
+
+        <!--button onclick="Summary()" id="Unsold" >Unsold</button>
+        <button onclick="DailySummary()" id="DailySummary" >Daily Summary</button>
+        <button onclick="ModelSummary()" id="SoldOnDate" >Sold on Date</button>
+        <br></br-->
+        
+        <div>
+          <select id="Name" name="Name">
+            <option value="_id" selected>Chasis</option>
+            <option value="Model">Model</option>
+           </select>
+          <input id="SearchValue" name="SearchValue" type="text" placeholder="View All Value" />
+            <button onclick="Search('searchRecord')" id="Search" >Search Inventory</button>
+           
+            <br><br>
+            <input id="startDate" name="startDate" type="date" placeholder="enter from Date" />
+            <input id="endDate" name="endDate" type="date" placeholder="enter to Date" />
+            <button onclick="Search('searchBillingRecord')" id="SearchBill" >Search Billing</button>
+        </div>
+
+        
+        <div> 
+        <br>
+        <b><label id="Summary" hidden>Available Summary</label> </b>
+        <br><br><table id="excelDataTable" border="1" style="border-collapse:collapse;">
+        </table>
+        </div>
+    <br></br>
+    <iframe name="hiddenFrame" width="auto"></iframe>
+
+    </Body>
+</html>

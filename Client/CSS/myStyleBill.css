@@ -1,0 +1,33 @@
+@media print {
+  .printbutton {
+  visibility: hidden;
+  display: none;
+  text-align: right;
+    }
+}
+table {
+    width: 100%;
+}
+input {
+    background-color: transparent;
+    border: 0px solid;
+    height: 20px;
+    color: #000;
+    text-align: right;
+    width: auto;
+}
+button {
+    background-color: #ffffff; 
+    color: black;
+    font-size: 15px;
+    border: 2px solid black;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    width: 20%;
+    height: 5%;
+} 
+
+button:hover {
+    background-color: #000000; /* Green */
+    color: white;
+}
