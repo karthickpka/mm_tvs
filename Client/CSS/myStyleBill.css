@@ -1,4 +1,5 @@
 @media print {
+   @page { margin: 0; }
   .printbutton {
   visibility: hidden;
   display: none;

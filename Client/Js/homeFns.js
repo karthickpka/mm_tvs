@@ -25,7 +25,8 @@ function Search(pTable){
     else
     {
       queryString= "/"+pTable+"?startdate="+document.getElementById('startDate').value+"&enddate="+document.getElementById('endDate').value;
-
+      if(document.getElementById("onlyCredit").checked)
+      queryString +="&checked=true";
       //alert("Enter Value in Search Box")
       //return;
     }
@@ -110,13 +111,12 @@ function addAllColumnHeaders(myList, selector) {
 }
 function resetInputFields(){
     setDate();
-    document.getElementById("Chasis").value ="";
-    document.getElementById("Engine").value ="";
-    document.getElementById("Model").value ="";
-    document.getElementById("Mrp").value ="";
-    document.getElementById("Price").value ="";
-    document.getElementById("Color").value ="";
-    document.getElementById("Comment").value="";
+    document.getElementById("chasis").value ="";
+    document.getElementById("engine").value ="";
+    document.getElementById("model").value ="";
+    document.getElementById("mrp").value ="";
+    document.getElementById("color").value ="";
+    document.getElementById("comment").value="";
 }
 
 function goToBilling()
