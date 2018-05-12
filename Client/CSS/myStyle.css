@@ -19,7 +19,17 @@ input {
     width:18%;
 }
 button {
+    background-color: #ffffff; 
+    color: black;
+    font-size: 15px;
+    border: 1px solid black;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
     width:18%;
+}
+button:hover {
+    background-color: #000000; /* Green */
+    color: white;
 }
 select{
     width:18%;
